@@ -1,0 +1,1 @@
+const sessionId = 'abcdario'
