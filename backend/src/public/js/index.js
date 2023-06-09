@@ -13,7 +13,8 @@ window.addEventListener('load', async () => {
   const { isLogged } = await getWhatsappSession()
 
   if (isLogged) {
-    showNotification()
+    showNotification('success', 'Ya iniciaste sesión en whatsapp! ahora te redireccionaremos a la página principal')
+
     setTimeout(() => {
       window.location.href = '/pages/home/home.html'
     }, 5000)
@@ -38,15 +39,18 @@ function clearElement (element) {
   element.innerHTML = ''
 }
 
-function showNotification () {
+function showNotification (variant, message) {
+  let bgColor
+
+  if (variant === 'success') bgColor = 'bg-green-500'
+  if (variant === 'danger') bgColor = 'bg-red-500'
+  if (variant === 'info') bgColor = 'bg-blue-500'
+
   const element = document.createElement('div')
-  element.className = 'w-full fixed bottom-0 left-0'
+  element.className = `max-w-xs rounded-md ${bgColor} text-sm text-white shadow-lg fixed bottom-5 right-4`
 
   element.innerHTML = `
-  <div class=" w-full bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3" role="alert">
-    <p class="font-bold">inicio de sesión 👌</p>
-    <p class="text-sm">ahora te redireccionaremos a tu espacio de trabajo.</p>
-  </div>
+  <div class="p-4 text-white">${message}</div>
   `
   document.body.appendChild(element)
 }

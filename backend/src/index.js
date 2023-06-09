@@ -55,6 +55,7 @@ io.on('connection', async (socket) => {
       })
 
       client.on('initFlow', (flow) => {
+        console.log('flow iniciado')
         console.log(flow)
       })
     } else {

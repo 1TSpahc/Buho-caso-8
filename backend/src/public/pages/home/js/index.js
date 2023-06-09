@@ -93,7 +93,11 @@ modal.addEventListener('click', (event) => {
 })
 
 btnActiveFlow.addEventListener('click', () => {
-  initializeFlow(flujo)
+  socket.emit('initFlow', flujo)
+  // console.log('click')
+  // initializeFlow(flujo)
+
+  // console.log(initializeFlow)
 })
 // funciones
 
