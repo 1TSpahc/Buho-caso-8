@@ -1,19 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./css/style.css">
-    <title>Configura tu bot</title>
-
-</head>
-
-<body class="px-3">
-
-    <section class="py-3 flex flex-col items-center justify-start gap-10 h-screen">
+function viewApp () {
+  document.body.innerHTML = `
+  <section class="py-3 flex flex-col items-center justify-start gap-10 h-screen">
         <h1 class="text-center text-3xl">Configura tu bot 🤖</h1>
         <button
             class="text-md text-white bg-gradient-to-t from-stone-800 to-black/80 hover:bg-black transition duration-300 px-4 py-3 rounded-md shadow-lg shadow-stone-400/10 hover:shadow-stone-400/20">Crear
@@ -26,9 +13,14 @@
         <div class="left-0 flex gap-4 py-3">
             <button id="btn-primary"
                 class=" text-md text-white bg-gradient-to-t from-stone-800 to-black/80 hover:bg-black transition duration-300 px-4 py-3 rounded-md shadow-lg shadow-stone-400/10 hover:shadow-stone-400/20"
-                data-id="pizza">Pizzería</button>
-            <button
-                class=" cursor-not-allowed text-md text-white bg-gradient-to-t from-stone-800 to-black/80 opacity-90 transition duration-300 px-4 py-3 rounded-md shadow-lg shadow-stone-400/10 ">Restaurante</button>
+                data-id="pizza">Pizzería
+            </button>
+
+            <button id="btn-secondary"
+            class=" text-md text-white bg-gradient-to-t from-stone-800 to-black/80 hover:bg-black transition duration-300 px-4 py-3 rounded-md shadow-lg shadow-stone-400/10 hover:shadow-stone-400/20"
+            data-id="pizza">Restaurante
+            </button>
+           
             <button
                 class=" cursor-not-allowed text-md text-white bg-gradient-to-t from-stone-800 to-black/80 opacity-90 transition duration-300 px-4 py-3 rounded-md shadow-lg shadow-stone-400/10 ">Mecanico</button>
             <button
@@ -55,12 +47,12 @@
             <button class=" text-md text-white bg-gradient-to-t from-stone-800 to-black/80 hover:bg-black transition duration-300 px-4 py-3 rounded-md shadow-lg shadow-stone-400/10 hover:shadow-stone-400/20" id="btn-active-flow">Usar este template</button>
         </section>
     </section>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="../../js/socket/config/index.js"></script>
-    <script src="../../js/socket/index.js"></script>
-    <script src="../../js/utils/saveSession.js"></script>
+`
+}
+/*
+<script src="/socket.io/socket.io.js"></script>
+    <script src="./js/socket/config/index.js"></script>
+    <script src="./js/socket/index.js"></script>
+    <script src="./js/utils/saveSession.js"></script>
     <script src="./js/index.js"></script>
-
-</body>
-
-</html>
+*/

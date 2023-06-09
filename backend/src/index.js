@@ -54,9 +54,33 @@ io.on('connection', async (socket) => {
         socket.emit('wpSessionClose', { session: null, isLogged: false })
       })
 
-      client.on('initFlow', (flow) => {
-        console.log('flow iniciado')
-        console.log(flow)
+      socket.on('initFlow', async (flow) => {
+        const flowContent = flow
+
+        const { triggers, actions } = flowContent
+
+        client.on('message', async (userMsg) => {
+          const findMatch = triggers.find((item) => item.keyword === userMsg.body)
+          const findAction = actions[findMatch?.next]
+
+          console.log({
+            findMatch,
+            findAction
+          })
+
+          client.sendMessage(userMsg.from, findAction?.message)
+
+          // if (findMatch === 'errorKeyword') {
+          //   client.sendMessage(userMsg.from, 'No se reconoce la palabra clave')
+          //   return
+          // }
+        })
+
+        // console.log('flow iniciado')
+        console.log({
+          triggers,
+          actions
+        })
       })
     } else {
       socket.emit('sessionError', 'Ya hay un usuario conectado')

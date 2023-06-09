@@ -57,5 +57,5 @@ function closeSession () {
 }
 
 function initializeFlow (flow) {
-  socket.emit('initFlow', flow)
+  socket.emit('initFlow', 'flow')
 }
