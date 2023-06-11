@@ -1,13 +1,10 @@
 window.addEventListener('load', async () => {
-  // TODO: ver si ya esta logeado para no mostrar el qr
-
   console.log(sessionId)
 
   initializeSession(sessionId)
   getSocketSession()
 
   const qr = await getQrCode()
-  console.log(qr)
   renderQr(qr)
 
   const { isLogged } = await getWhatsappSession()

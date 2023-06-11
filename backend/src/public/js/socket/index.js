@@ -1,21 +1,5 @@
 const socket = io('http://localhost:4000')
 
-// socket.emit('session', id)
-
-// socket.on('socketConection', (data) => {
-//   console.log(data)
-// })
-
-// socket.on('qrCode', (qr) => {
-//   console.log(qr)
-//   imgQr.src = qr
-// })
-
-// socket.on('wpSession', (data) => {
-//   console.log(data)
-//   console.log('Whatsapp conectado')
-// })
-
 // functions
 
 function initializeSession (id) {
