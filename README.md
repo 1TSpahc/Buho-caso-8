@@ -1,6 +1,6 @@
 # Buho caso 8
 
-## ChatBot 🤖🤖
+## ChatBot 🤖🤖 ( 🔨 En desarrollo 🔨)
 
 ![Primer Diseno](./screenshots/1.png)
 ![Primer Diseno](./screenshots/2.png)
